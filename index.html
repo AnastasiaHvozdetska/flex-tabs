@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="./css/normalize.css">
+	<link rel="stylesheet" href="./css/style.css">
+	
+	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+	<script src="https://use.fontawesome.com/02e8312cff.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="./js/script.js"></script>
+	
+</head>
+<body>
+	<header class="ph-header"></header>
+	<main class="ph-main">
+		<div class="ph-main--list-container">
+			<ul class="list-accordion">
+				<li class="list-accordion__item" style="background-color: #620808; color: #ffe9c1">
+					<a href="#" class="item-link">
+						<img src="./imgs/Location%20Pin.png" alt="">
+						<span>Location</span>
+					</a>
+					<div class="accordion_content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis beatae enim inventore earum magnam, suscipit itaque accusamus veritatis nostrum quod veniam minus animi, asperiores repudiandae voluptate, nesciunt dolorum aut mollitia.
+					</div>
+				</li>
+				<li class="list-accordion__item" style="background-color: #a53f3f; color: #f4ce74"> 
+					<a href="#" class="item-link">
+						<img src="./imgs/Headphones.png" alt="">
+						<span>Music</span>
+					</a>
+					<div class="accordion_content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis beatae enim inventore earum magnam, suscipit itaque accusamus veritatis nostrum quod veniam minus animi, asperiores repudiandae voluptate, nesciunt dolorum aut mollitia.
+					</div>
+				</li>
+				<li class="list-accordion__item" style="background-color: #f4ce74; color: #620808">
+					<a href="#" class="item-link">
+						<img src="./imgs/Lightbulb.png" alt="">
+						<span>Notes</span>
+					</a>
+					<div class="accordion_content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis beatae enim inventore earum magnam, suscipit itaque accusamus veritatis nostrum quod veniam minus animi, asperiores repudiandae voluptate, nesciunt dolorum aut mollitia.
+					</div>
+				</li>
+				<li class="list-accordion__item" style="background-color: #ffe9c1; color: #a53f3f">
+					<a href="#" class="item-link">
+						<img src="./imgs/Bookmarks.png" alt="">
+						<span>Books</span>
+					</a>
+					<div class="accordion_content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis beatae enim inventore earum magnam, suscipit itaque accusamus veritatis nostrum quod veniam minus animi, asperiores repudiandae voluptate, nesciunt dolorum aut mollitia.
+					</div>
+				</li>
+				<li class="list-accordion__item" style="background-color: #d5441c; color: #ffe9c1">
+					<a href="#" class="item-link">
+						<img src="./imgs/Lightning-Bolt.png" alt="">
+						<span>Tendances</span>
+					</a>
+					<div class="accordion_content">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis beatae enim inventore earum magnam, suscipit itaque accusamus veritatis nostrum quod veniam minus animi, asperiores repudiandae voluptate, nesciunt dolorum aut mollitia.
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div id="modal">
+			<div class="modal_content">
+				<i class="fa fa-times close" aria-hidden="true"></i>
+				<div class="content_itself">Hello!</div>
+			</div>
+			<div class="fade-bg"></div>
+		</div>
+		<a href="#" id="open_modal">Open modal</a>
+	</main>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		jQuery(document).ready(function($){
+			$(".accordion_content").slideUp("0");
+
+			$(".item-link").click(function(){
+				$(this).next().slideToggle(200);
+				$(".accordion_content").not($(this).next()).slideUp("slow");
+			});
+			
+			$(".close, .fade-bg").click(function(){
+				$("#modal").css("display", "none");
+			})
+			
+			$("#open_modal").click(function(){
+				$("#modal").css("display", "block");
+			})
+		});
+	</script>
+	
+</body>
+</html>
